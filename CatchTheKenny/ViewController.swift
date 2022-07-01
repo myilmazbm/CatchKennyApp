@@ -36,13 +36,12 @@ class ViewController: UIViewController {
         
         let highScoreOld = UserDefaults.standard.object(forKey: "highScore")
         //print("aldı")
-        if highScoreOld == nil{
-            print("nil çıktı")
+        if highScoreOld != nil{
+            if let newScore = highScoreOld as? Int{
+                highScore = newScore
+            }
         }
-        if let newScore = highScoreOld as? Int{
-            print("çevirdi")
-            highScore = newScore
-        }
+
         
         highScoreLabel.text = "High Score: \(highScore)"
         
